@@ -1,3 +1,6 @@
+using Microsoft.Extensions.Logging.ApplicationInsights;
+using System.Runtime.CompilerServices;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +8,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Logging.AddApplicationInsights(
+    configureTelemetryConfiguration: (config)=>
+    config.ConnectionString = builder.Configuration.GetConnectionString("APPLICATIONINSIGHTS_CONNECTION_STRING"),
+    configureApplicationInsightsLoggerOptions: (options) => { }
+    );
+//This is in case I want to log only specific namespaces (what-is-this-category-thing = namespace). Minimum log level will be LogLevel.Information
+//builder.Logging.AddFilter<ApplicationInsightsLoggerProvider>("what-is-this-category-thing", LogLevel.Information);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
