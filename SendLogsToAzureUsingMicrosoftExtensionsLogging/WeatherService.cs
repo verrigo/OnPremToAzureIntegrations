@@ -15,13 +15,23 @@
         {
             _logger.LogInformation("Hmmm");
             var forecast = Enumerable.Range(1, 5).Select(index =>
-            new WeatherForecast
-            (
-                DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                Random.Shared.Next(-20, 55),
-                _summaries[Random.Shared.Next(_summaries.Length)]
-            ))
-            .ToArray();
+                new WeatherForecast
+                (
+                    DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+                    Random.Shared.Next(-20, 55),
+                    _summaries[Random.Shared.Next(_summaries.Length)]
+                ))
+                .ToArray();
+            try
+            {
+                _logger.LogError(new Exception("This is it"), "This is ids");
+               
+                throw new Exception("Throwing");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+            }
                 return forecast;
         }
 
