@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendLogsToAzureUsingSerilog", "SendLogsToAzure\SendLogsToAzureUsingSerilog.csproj", "{5E28EDC1-173E-471C-AD9D-324193EA1C62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SendLogsToAzureUsingSerilog", "SendLogsToAzure\SendLogsToAzureUsingSerilog.csproj", "{5E28EDC1-173E-471C-AD9D-324193EA1C62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendLogsToAzureUsingMicrosoftExtensionsLogging", "SendLogsToAzureUsingMicrosoftExtensionsLogging\SendLogsToAzureUsingMicrosoftExtensionsLogging.csproj", "{5D3454B2-116E-463A-88E7-252C4F12DD33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SendLogsToAzureUsingMicrosoftExtensionsLogging", "SendLogsToAzureUsingMicrosoftExtensionsLogging\SendLogsToAzureUsingMicrosoftExtensionsLogging.csproj", "{5D3454B2-116E-463A-88E7-252C4F12DD33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureAppConfigurationIntegration", "AzureAppConfigurationIntegration\AzureAppConfigurationIntegration.csproj", "{FCD748EB-A5BD-4D35-9212-CE9542F354EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{5D3454B2-116E-463A-88E7-252C4F12DD33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D3454B2-116E-463A-88E7-252C4F12DD33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D3454B2-116E-463A-88E7-252C4F12DD33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCD748EB-A5BD-4D35-9212-CE9542F354EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCD748EB-A5BD-4D35-9212-CE9542F354EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCD748EB-A5BD-4D35-9212-CE9542F354EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCD748EB-A5BD-4D35-9212-CE9542F354EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
