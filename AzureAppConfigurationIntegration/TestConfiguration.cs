@@ -1,4 +1,8 @@
 ﻿namespace AzureAppConfigurationIntegration
 {
-    public record TestConfiguration(int MaximumTestDurationInSeconds, int MaximumNumberOfParallelTests);
+    public class TestConfiguration
+    {
+        public int MaximumTestDurationInSeconds { get; set; }
+        public int MaximumNumberOfParallelTests { get; set; }
+    }
 }
