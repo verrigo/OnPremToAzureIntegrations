@@ -1,10 +1,20 @@
+using Azure.Identity;
 using AzureAppConfigurationIntegration;
 using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var appConfigurationConnectionString = builder.Configuration.GetConnectionString("AzureAppConfiguration");
-builder.Configuration.AddAzureAppConfiguration(appConfigurationConnectionString);
+builder.Configuration.AddAzureAppConfiguration(options =>
+{
+    options.Connect(appConfigurationConnectionString)
+    .ConfigureKeyVault(kv =>
+    {
+        kv.SetCredential(new DefaultAzureCredential(
+            new DefaultAzureCredentialOptions {}
+            ));
+    });
+});
 builder.Services.Configure<TestConfiguration>(builder.Configuration.GetSection("AzureAppConfigurationIntegration:TestConfiguration"));
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
